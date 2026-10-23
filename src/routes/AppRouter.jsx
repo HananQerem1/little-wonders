@@ -9,14 +9,13 @@ import Contact from "./../pages/Contact.jsx";
 import Wishlist from "./../features/wishlist/pages/Wishlist.jsx";
 import Cart from "./../features/cart/pages/Cart.jsx";
 import Checkout from "./../features/checkout/pages/Checkout.jsx";
+import CheckoutOptions from "../features/auth/pages/CheckoutOptions.jsx";
 import OrderConfirmation from "./../features/orderConfirmation/pages/OrderConfirmation.jsx";
 import OrderStatus from "./../features/orderStatus/pages/OrderStatus.jsx";
 import Profile from "./../features/profile/pages/Profile.jsx";
 
 import CreateAccount from "./../features/auth/pages/CreateAccount.jsx";
 import Login from "./../features/auth/pages/Login.jsx";
-import Register from "./../features/auth/pages/Register.jsx";
-import ForgotPassword from "./../features/auth/pages/ForgotPassword.jsx";
 import ResetPassword from "./../features/auth/pages/ResetPassword.jsx";
 import Unauthorized from "./../pages/Unauthorized.jsx";
 
@@ -81,16 +80,16 @@ const AppRouter = createBrowserRouter([
                 element: <CreateAccount />
             },
             {
+                path: '/checkout/auth/create-account',
+                element: <CreateAccount />
+            },
+            {
                 path: '/login',
                 element: <Login />
             },
             {
-                path: '/register',
-                element: <Register />
-            },
-            {
-                path:'/forgot-password',
-                element: <ForgotPassword />
+                path: '/checkout/auth/login',
+                element: <Login />
             },
             {
                 path: '/reset-password',
@@ -99,6 +98,10 @@ const AppRouter = createBrowserRouter([
             {
                 path: '/unauthorized',
                 element: <Unauthorized />
+            },
+            {
+               path:'/checkout/auth',
+               element: <CheckoutOptions /> 
             }
         ]
     }

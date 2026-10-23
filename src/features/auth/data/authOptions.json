@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "icon": "PersonAdd",
+        "title": "New around here?",
+        "subTitle": "Create an account to track your orders, save your favorite toys, and make your next checkout even easier.",
+        "features": [
+            {
+                "featureIcon": "LocalShipping",
+                "featurePara": "Track your orders in real time" 
+            },
+            {
+                "featureIcon": "FavoriteBorder",
+                "featurePara": "Save favorite toys to your Wishlist" 
+            },
+            {
+                "featureIcon": "Bolt",
+                "featurePara": "Enjoy a faster, smoother checkout next time" 
+            }
+        ],
+        "button": {
+            "name": "Create Account",
+            "buttonIcon": "East",
+            "backgroundColor": "#516442"
+        },
+        "para": "Just a few quick steps! Takes under 1 minute.",
+        "navigateTo": "create-account"
+    },
+    {
+        "id": 2,
+        "icon": "Person",
+        "title": "Welcome back!",
+        "subTitle": "Your little one's next favorite toy is just a few clicks away. Sign in to access your saved addresses and nursery history.",
+        "features": [
+            {
+                "featureIcon": "Home",
+                "featurePara": "Instant autofill for saved nursery shipping addresses" 
+            },
+            {
+                "featureIcon": "Gift",
+                "featurePara": "Access member-exclusive milestone savings & perks" 
+            },
+            {
+                "featureIcon": "ReceiptLong",
+                "featurePara": "View past orders and heirloom receipt archive" 
+            }
+        ],
+        "button": {
+            "name": "Log In to Account",
+            "buttonIcon": "Login",
+            "backgroundColor": "#D1A164"
+        },
+        "para": "Let's pick up where you left off!",
+        "navigateTo": "login"
+    }
+]
