@@ -13,7 +13,7 @@ export default function CheckoutOptions() {
           </Box>
           <Grid container spacing={2} sx={{alignItems: "stretch"}}>
             {authOptions.map((option) => (
-              <Grid key={option.id} size={{ xs: 12, md: 6 }} sx={{ display: "flex", border:"1px solid #4C616E", borderRadius: 4, overflow:"hidden"}}>
+              <Grid key={option.id} size={{ xs: 12, md: 6 }} sx={{ display: "flex", border:"2px solid #d8dad0", borderRadius: 4, overflow:"hidden"}}>
                 <CheckoutOption option={option} />
               </Grid>
             ))}

@@ -1,5 +1,7 @@
+import CreateAccountForm from "./../components/CreateAccountForm";
+
 export default function CreateAccount() {
   return (
-    <h1>createAccount</h1>
+    <CreateAccountForm />
   )
 }

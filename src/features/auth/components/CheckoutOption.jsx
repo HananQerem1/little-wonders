@@ -16,15 +16,15 @@ const ButtonIcon = iconMap[option.button.buttonIcon];
 
   return (
     <>
-      <Card sx={{ minWidth: 275, bgcolor:"#c5c8bc"}}>
-        <CardContent>
+      <Card sx={{ minWidth: 275, height: "100%", bgcolor:"#f5f4ee", display:"flex", flexDirection: "column"}}>
+        <CardContent sx={{display:"flex", flexDirection: "column", flexGrow: 1}}>
           <Avatar>
             {Icon && <Icon />}
           </Avatar>
-          <Typography variant="h3" component="div">
+          <Typography variant="h3" component={"div"}>
             {option.title}
           </Typography>
-          <Typography sx={{ color: 'text.secondary', mb: 1.5 }}>
+          <Typography sx={{ color: 'text.secondary', flexGrow: 1}}>
             {option.subTitle}
           </Typography>
           <List sx={{ width: '100%', maxWidth: 360 }}>
@@ -48,7 +48,7 @@ const ButtonIcon = iconMap[option.button.buttonIcon];
              })}
           </List>
         </CardContent>
-        <CardActions>
+        <CardActions >
             <Button component={Link} to={option.navigateTo} size="small" sx={{bgcolor:"#516442", color: "#fff", p:2, borderRadius:3, width:"100%", mb:1}}>
               <Stack direction="row" spacing={4}>
                 {option.button.name}
