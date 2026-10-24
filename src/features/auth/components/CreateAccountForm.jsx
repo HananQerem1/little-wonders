@@ -36,7 +36,7 @@ export default function CreateAccountForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm({
     resolver: yupResolver(registerSchema),
     mode: "onBlur",
@@ -55,12 +55,12 @@ export default function CreateAccountForm() {
 
   return (
     <>
-      {serverError && (
-        <Alert severity="error">
-          {serverError}
-        </Alert>
-      )}
       <Container maxWidth="lg" sx={{bgcolor:"#ffffff", borderRadius:3, p:6 }}>
+        {serverError && (
+          <Alert severity="error">
+            {serverError}
+          </Alert>
+        )}
         <Box sx={{display: "flex", flexDirection: "column", gap:5}}>
           <Box sx={{display:"flex", flexDirection: "column", gap: 1}}>
             <Typography variant="h2" component={"h2"}>Create Your Account</Typography>
@@ -151,7 +151,11 @@ export default function CreateAccountForm() {
               </FormControl>
               <StrengthBar password={password} />
             </Grid>
-            <ButtonPrimary type="submit" Name="CREATE ACCOUNT & GET $10 GIFT" />
+            <ButtonPrimary 
+              type="submit"
+              disabled={isSubmitting}
+              Name={isSubmitting ? "CREATING ACCOUNT..." : "CREATE ACCOUNT"}
+            />
             <Typography sx={{textAlign:"center", width: "100%"}}>Already have an account? 
               <Link to="/login">Login</Link>
             </Typography>
