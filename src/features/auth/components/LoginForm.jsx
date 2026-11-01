@@ -104,8 +104,11 @@ export default function LoginForm() {
             <ButtonPrimary 
               type="submit"
               disabled={isSubmitting}
-              Name={isSubmitting ? "CREATING ACCOUNT..." : "CREATE ACCOUNT"}
+              Name={isSubmitting ? "LOGGING IN..." : "LOGIN"}
             />
+            <Typography variant="body2">Forgot Password?
+              <Link to="/reset-password">Reset Password</Link>
+            </Typography>
           </Grid>
         </Box>
       </Container>

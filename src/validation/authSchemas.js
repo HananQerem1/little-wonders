@@ -55,3 +55,13 @@ export const loginSchema = yup.object({
         .matches(/[0-9]/, "Password must contain at least one number"),
 
 });
+
+export const resetPasswordSchema = yup.object({
+    email: yup
+        .string()
+        .trim()
+        .required("Email is required")
+        .email("Please enter a valid email address"),
+});
+
+
