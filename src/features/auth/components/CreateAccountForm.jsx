@@ -18,6 +18,8 @@ import {registerUser} from "../services/registerApi";
 import { useNavigate } from "react-router";
 import { Alert } from "@mui/material";
 import FormHelperText from "@mui/material/FormHelperText";
+import * as headerOption from "./../data/authHeaders.js"
+import PageHeader from "../../../sharedUI/PageHeader.jsx";
 
 export default function CreateAccountForm() {
   const standardPasswordId = React.useId();
@@ -62,10 +64,7 @@ export default function CreateAccountForm() {
           </Alert>
         )}
         <Box sx={{display: "flex", flexDirection: "column", gap:5}}>
-          <Box sx={{display:"flex", flexDirection: "column", gap: 1}}>
-            <Typography variant="h2" component={"h2"}>Create Your Account</Typography>
-            <Typography>Join over 18,000+ happy parents and caregivers.</Typography>
-          </Box>
+          <PageHeader data={headerOption.createAccount}/>
           <Grid container component={"form"} spacing={6} onSubmit={handleSubmit(onSubmit)}>
             <Grid size={6}>
               <TextField

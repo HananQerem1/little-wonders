@@ -1,8 +1,8 @@
 import { Box, Container, Grid} from "@mui/material";
-import CheckoutOption from "./../components/CheckoutOption";
-import authOptions from "./../data/authOptions.json";
-import chechoutHeader from "./../data/chechoutHeader.json";
+import CheckoutOption from "../components/CheckoutOption.jsx";
+import * as headerOption from "./../data/authHeaders.js";
 import PageHeader from "./../../../sharedUI/PageHeader";
+import authOptions from "./../data/authOptions.json";
 
 export default function CheckoutOptions() {
 
@@ -10,7 +10,7 @@ export default function CheckoutOptions() {
     <>
       <Container>
         <Box sx={{display: "flex", flexDirection: "column", gap: 5}}>
-          <PageHeader data={chechoutHeader} />
+          <PageHeader data={headerOption.checkoutOptions} />
           <Grid container spacing={2} sx={{alignItems: "stretch"}}>
             {authOptions.map((option) => (
               <Grid key={option.id} size={{ xs: 12, md: 6 }} sx={{ display: "flex", border:"2px solid #d8dad0", borderRadius: 4, overflow:"hidden"}}>

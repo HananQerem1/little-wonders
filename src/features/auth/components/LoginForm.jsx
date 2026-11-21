@@ -15,6 +15,8 @@ import { loginSchema } from "./../../../validation/authSchemas";
 import {loginUser} from "../services/loginApi";
 import { useNavigate } from "react-router";
 import { Alert } from "@mui/material";
+import * as headerOption from "./../data/authHeaders.js"
+import PageHeader from "../../../sharedUI/PageHeader.jsx";
 
 export default function LoginForm() {
   const standardPasswordId = React.useId();
@@ -57,13 +59,9 @@ export default function LoginForm() {
             {serverError}
           </Alert>
         )}
-        <Box sx={{display: "flex", flexDirection: "column", gap:5}}>
-          <Box sx={{display:"flex", flexDirection: "column", gap: 1}}>
-            <Typography variant="h2" component={"h2"}>Login</Typography>
-            <Typography sx={{width: "100%"}}>New to Little Wonders?  
-              <Link to="/create-account">Create an Account</Link>
-            </Typography>          
-          </Box>
+        <Box sx={{display: "flex", flexDirection: "column", alignItems:'center' ,gap:5}}>
+          <PageHeader data={headerOption.login}/>
+          <Link to="/create-account">Create an Account</Link>
           <Grid container component={"form"} spacing={6} onSubmit={handleSubmit(onSubmit)}>
             <Grid size={12}>
               <TextField
