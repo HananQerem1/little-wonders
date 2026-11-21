@@ -9,7 +9,7 @@ import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 import LoginIcon from "@mui/icons-material/Login";
 
-const iconMap = {
+export const iconMap = {
   PersonAdd: PersonAddIcon,
   LocalShipping: LocalShippingIcon,
   FavoriteBorder: FavoriteBorderIcon,
@@ -22,4 +22,3 @@ const iconMap = {
   Login: LoginIcon,
 };
 
-export default iconMap;

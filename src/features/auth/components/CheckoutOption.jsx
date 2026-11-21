@@ -8,8 +8,9 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import { Button, Stack } from '@mui/material';
-import iconMap from '../../../utils/iconMap';
+import {iconMap} from './../../../utils/iconMap.js';
 import { Link } from 'react-router';
+
 export default function CheckoutOption({option}) {
 const Icon = iconMap[option.icon];
 const ButtonIcon = iconMap[option.button.buttonIcon];
