@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Container, FormControl, Grid, TextField, Typography } from "@mui/material";
+import { Box, FormControl, Grid, TextField, Typography } from "@mui/material";
 import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
@@ -15,8 +15,7 @@ import { loginSchema } from "./../../../validation/authSchemas";
 import {loginUser} from "../services/loginApi";
 import { useNavigate } from "react-router";
 import { Alert } from "@mui/material";
-import * as headerOption from "./../data/authHeaders.js"
-import PageHeader from "../../../sharedUI/PageHeader.jsx";
+
 
 export default function LoginForm() {
   const standardPasswordId = React.useId();
@@ -53,16 +52,13 @@ export default function LoginForm() {
 
   return (
     <>
-      <Container maxWidth="lg" sx={{bgcolor:"#ffffff", borderRadius:3, p:6 }}>
+      <Box>
         {serverError && (
           <Alert severity="error">
             {serverError}
           </Alert>
         )}
-        <Box sx={{display: "flex", flexDirection: "column", alignItems:'center' ,gap:5}}>
-          <PageHeader data={headerOption.login}/>
-          <Link to="/create-account">Create an Account</Link>
-          <Grid container component={"form"} spacing={6} onSubmit={handleSubmit(onSubmit)}>
+        <Grid container component={"form"} spacing={6} onSubmit={handleSubmit(onSubmit)}>
             <Grid size={12}>
               <TextField
                 id="email-address"
@@ -107,9 +103,8 @@ export default function LoginForm() {
             <Typography variant="body2">Forgot Password?
               <Link to="/reset-password">Reset Password</Link>
             </Typography>
-          </Grid>
-        </Box>
-      </Container>
+        </Grid>
+      </Box>
     </>
   )
 }

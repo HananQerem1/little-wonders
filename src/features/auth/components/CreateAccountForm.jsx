@@ -1,7 +1,7 @@
 import PasswordStrengthBar from "react-password-strength-bar";
 const StrengthBar = PasswordStrengthBar.default ?? PasswordStrengthBar;
 import * as React from 'react';
-import { Box, Container, FormControl, Grid, TextField, Typography } from "@mui/material";
+import { Box, FormControl, Grid, TextField, Typography } from "@mui/material";
 import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
@@ -18,8 +18,7 @@ import {registerUser} from "../services/registerApi";
 import { useNavigate } from "react-router";
 import { Alert } from "@mui/material";
 import FormHelperText from "@mui/material/FormHelperText";
-import * as headerOption from "./../data/authHeaders.js"
-import PageHeader from "../../../sharedUI/PageHeader.jsx";
+
 
 export default function CreateAccountForm() {
   const standardPasswordId = React.useId();
@@ -57,15 +56,13 @@ export default function CreateAccountForm() {
 
   return (
     <>
-      <Container maxWidth="lg" sx={{bgcolor:"#ffffff", borderRadius:3, p:6 }}>
+      <Box>
         {serverError && (
           <Alert severity="error">
             {serverError}
           </Alert>
         )}
-        <Box sx={{display: "flex", flexDirection: "column", gap:5}}>
-          <PageHeader data={headerOption.createAccount}/>
-          <Grid container component={"form"} spacing={6} onSubmit={handleSubmit(onSubmit)}>
+        <Grid container component={"form"} spacing={6} onSubmit={handleSubmit(onSubmit)}>
             <Grid size={6}>
               <TextField
                 id="full-name"
@@ -158,9 +155,8 @@ export default function CreateAccountForm() {
             <Typography sx={{textAlign:"center", width: "100%"}}>Already have an account? 
               <Link to="/login">Login</Link>
             </Typography>
-          </Grid>
-        </Box>
-      </Container>
+        </Grid>
+      </Box>
     </>
   )
 }
